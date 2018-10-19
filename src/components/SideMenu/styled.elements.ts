@@ -96,7 +96,6 @@ export const menuItemDepth = {
     text-transform: ${({ theme }) => theme.menu.groupItems.textTransform};
     font-size: 0.8em;
     padding-bottom: 0;
-    cursor: default;
     color: ${props => props.theme.colors.text.primary};
   `,
   1: css`

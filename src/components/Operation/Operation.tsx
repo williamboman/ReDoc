@@ -3,7 +3,7 @@ import { SecurityRequirements } from '../SecurityRequirement/SecurityRequirement
 
 import { observer } from 'mobx-react';
 
-import { Badge, DarkRightPanel, H2, MiddlePanel, Row } from '../../common-elements';
+import { Badge, DarkRightPanel, H3, MiddlePanel, Row } from '../../common-elements';
 
 import { OptionsContext } from '../OptionsProvider';
 
@@ -48,10 +48,10 @@ export class Operation extends React.Component<OperationProps> {
         {options => (
           <OperationRow>
             <MiddlePanel>
-              <H2>
+              <H3>
                 <ShareLink to={operation.id} />
                 {summary} {deprecated && <Badge type="warning"> Deprecated </Badge>}
-              </H2>
+              </H3>
               {options.pathInMiddlePanel && <Endpoint operation={operation} inverted={true} />}
               {hasDescription && (
                 <Description>
