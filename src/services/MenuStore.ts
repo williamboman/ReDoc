@@ -6,7 +6,6 @@ import { history as historyInst, HistoryService } from './HistoryService';
 import { ScrollService } from './ScrollService';
 
 import { flattenByProp, SECURITY_SCHEMES_SECTION_PREFIX } from '../utils';
-import { GROUP_DEPTH } from './MenuBuilder';
 
 export type MenuItemGroupType = 'group' | 'tag' | 'section';
 export type MenuItemType = MenuItemGroupType | 'operation';
@@ -192,12 +191,6 @@ export class MenuStore {
     this.deactivate(this.activeItem);
     if (!item) {
       this.history.replace('', rewriteHistory);
-      return;
-    }
-
-    // do not allow activating group items
-    // TODO: control over options
-    if (item.depth <= GROUP_DEPTH) {
       return;
     }
 

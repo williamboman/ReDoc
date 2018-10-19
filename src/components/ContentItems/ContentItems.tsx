@@ -4,7 +4,7 @@ import * as React from 'react';
 import { ExternalDocumentation } from '../ExternalDocumentation/ExternalDocumentation';
 import { AdvancedMarkdown } from '../Markdown/AdvancedMarkdown';
 
-import { H1, H2, MiddlePanel, Row, Section, ShareLink } from '../../common-elements';
+import { H1, H2, H3, MiddlePanel, Row, Section, ShareLink } from '../../common-elements';
 import { ContentItemModel } from '../../services/MenuBuilder';
 import { GroupModel, OperationModel } from '../../services/models';
 import { Operation } from '../Operation/Operation';
@@ -34,7 +34,7 @@ export class ContentItem extends React.Component<ContentItemProps> {
     const { type } = item;
     switch (type) {
       case 'group':
-        content = null;
+        content = <GroupItem {...this.props} />;
         break;
       case 'tag':
       case 'section':
@@ -63,11 +63,32 @@ export class ContentItem extends React.Component<ContentItemProps> {
 const middlePanelWrap = component => <MiddlePanel>{component}</MiddlePanel>;
 
 @observer
+export class GroupItem extends React.Component<ContentItemProps> {
+  render() {
+    const { name, description } = this.props.item as GroupModel;
+
+    return (
+      <>
+        <Row>
+          <MiddlePanel>
+            <H1>
+              <ShareLink to={this.props.item.id} />
+              {name}
+            </H1>
+          </MiddlePanel>
+        </Row>
+        <AdvancedMarkdown source={description || ''} htmlWrap={middlePanelWrap} />
+      </>
+    );
+  }
+}
+
+@observer
 export class SectionItem extends React.Component<ContentItemProps> {
   render() {
-    const { name, description, externalDocs, level } = this.props.item as GroupModel;
+    const { name, description, externalDocs, depth } = this.props.item as GroupModel;
 
-    const Header = level === 2 ? H2 : H1;
+    const Header = depth < 2 ? H2 : H3;
     return (
       <>
         <Row>
