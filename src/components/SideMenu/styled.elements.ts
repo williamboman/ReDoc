@@ -62,13 +62,7 @@ export const OperationBadge = withProps<{ type: string }>(styled.span).attrs({
 `;
 
 function menuItemActiveBg(depth): string {
-  if (depth > 1) {
-    return '#e1e1e1';
-  } else if (depth === 1) {
-    return '#f0f0f0';
-  } else {
-    return '';
-  }
+  return depth > 1 ? '#e1e1e1' : '#f0f0f0';
 }
 
 export const MenuItemUl = withProps<{ expanded: boolean }>(styled.ul)`
