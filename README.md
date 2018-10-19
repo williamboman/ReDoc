@@ -10,6 +10,8 @@
 
 </div>
 
+**This is a fork of Redoc with custom-built functionality that may be difficult to merge upstream.**
+
 **This is README for `2.0` version of ReDoc (React based). README for `1.x` version is on the branch [v1.x](https://github.com/Rebilly/ReDoc/tree/v1.x)**
 
 

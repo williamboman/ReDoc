@@ -1,10 +1,10 @@
 {
-  "name": "redoc",
-  "version": "2.0.0-alpha.40",
-  "description": "ReDoc",
+  "name": "redoc-extended",
+  "version": "2.0.0",
+  "description": "Fork of ReDoc with custom-built functionality.",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Rebilly/ReDoc"
+    "url": "git://github.com/williamboman/ReDoc"
   },
   "engines": {
     "node": ">=6.9",
