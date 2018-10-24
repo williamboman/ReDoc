@@ -1,3 +1,11 @@
+<a name="fork-2.1.0"></a>
+# [fork-2.1.0](https://github.com/Rebilly/ReDoc/compare/v2.0.0-alpha.40...fork-v2.1.0) (2018-10-24)
+
+### Typings
+
+* re-add missing typings to library
+* make sure typings are built as part of the bundle script
+
 <a name="2.0.0-alpha.41"></a>
 # [2.0.0-alpha.41](https://github.com/Rebilly/ReDoc/compare/v2.0.0-alpha.40...v2.0.0-alpha.41) (2018-10-18)
 
